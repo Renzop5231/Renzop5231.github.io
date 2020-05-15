@@ -1,0 +1,56 @@
+mat-card {
+  width: 60%;
+  margin: auto;
+  background-color: #4f4745;
+  color: #f9e7c4;
+  margin-top: 15px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin: auto;
+}
+
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+  background-color: #b77d68 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #b77d68 !important;
+}
+
+::ng-deep input.mat-input-element {
+  color: #f9e7c4;
+  caret-color: #b77d68 !important;
+}
+
+textarea {
+  height: 35px;
+  line-height: 35px;
+  font-size: S;
+  color: #b77d68;
+}
+
+#enterBut {
+  background-color: #f9e7c4;
+  margin-top: 5px;
+}
+
+#answerCard {
+  color: #ddaa88;
+  background-color: #f9e7c4;
+}
+
+#displayedWord {
+  font-size: 30px;
+}
+
+#UserInput {
+  font-size: 20px;
+}
+
+#UserInputError {
+  font-size: 20px;
+  color: red;
+}
+/*# sourceMappingURL=word-box.component.css.map */

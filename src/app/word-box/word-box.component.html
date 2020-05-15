@@ -1,0 +1,25 @@
+<mat-card>
+  <h2 id="displayedWord" (mouseover)="showAnswer=true" (mouseout)="showAnswer=false">{{ displayedWords }}</h2>
+  <mat-card id="answerCard" *ngIf="showAnswer==true">
+    <mat-card-title>Korean Translation:</mat-card-title>
+    <mat-card-subtitle [ngStyle]="{'font-weight': 'bolder'}">{{ currentWord }}</mat-card-subtitle>
+  </mat-card>
+  <mat-form-field>
+    <input matInput
+    #UserInput
+    id="UserInput"
+    [(ngModel)]="inputedWords"
+     rows="1"
+     (keyup.enter)="onEnterUp()"
+     />
+     <mat-label>Enter the correct verb here!</mat-label>
+     <mat-hint [style]="{ 'color':'#b77d68' }" >Korean Translation Of The Term Above</mat-hint>
+  </mat-form-field>
+  <button mat-raised-button
+  matTooltip="Click to submit your answer!"
+  (click)="onEnterUp()"
+  id="enterBut"
+  >
+  Enter
+</button>
+</mat-card>

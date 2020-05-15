@@ -1,0 +1,11 @@
+mat-card {
+  width: 75%;
+  background-color: #4f4745;
+  color: #f9e7c4;
+}
+
+mat-divider {
+  margin-top: 10px;
+  width: 80%;
+}
+/*# sourceMappingURL=word-list.component.css.map */

@@ -1,0 +1,27 @@
+mat-card {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  top: 5vh;
+  bottom: 5vh;
+  background-color: #773333;
+}
+
+mat-tab-group {
+  margin: auto;
+  width: 100%;
+}
+
+.mat-labels {
+  color: #ddaa88;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: #ddaa88 !important;
+}
+/*# sourceMappingURL=alt-tabs.component.css.map */

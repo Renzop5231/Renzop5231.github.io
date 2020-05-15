@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,KAAK,EAAE,GAAG;EACV,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,OAAO;CAAG;;AAEnB,AAAA,WAAW,CAAC;EACV,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,GAAG;CAAG",
+    "sources": [
+        "word-list.component.sass"
+    ],
+    "names": [],
+    "file": "word-list.component.css"
+}

@@ -1,0 +1,13 @@
+#tempCard {
+  background-color: #f9e7c4;
+  height: 88%;
+}
+
+.girlImg {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+/*# sourceMappingURL=flash-cards.component.css.map */
