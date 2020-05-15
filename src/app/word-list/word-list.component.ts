@@ -11,7 +11,7 @@ export interface Tile {
 @Component({
   selector: 'app-word-list',
   templateUrl: './word-list.component.html',
-  styleUrls: ['./word-list.component.sass']
+  styleUrls: ['./word-list.component.css']
 })
 export class WordListComponent implements OnInit {
 
