@@ -20,8 +20,17 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Korean Vocabulary App</span>
+      <a mat-button id="homeBut" class="nav-buts" routerLink="/" routerLinkActive>Korean Vocabulary App</a>
+      <span class="spacer"></span>
+      <button mat-button class="nav-buts" [matMenuTriggerFor]="koreanMenu">Korean</button>
+      <mat-menu #koreanMenu="matMenu">
+        <a mat-menu-item class="menu-buts" routerLink="/Korean/flash-cards" routerLinkActive>Flash Cards</a>
+        <a mat-menu-item class="menu-buts" routerLink="/Korean/word-lists" routerLinkActive>Word List</a>
+        <a mat-menu-item class="menu-buts" routerLink="/Korean/word-box" routerLinkActive>Vocab Test</a>
+      </mat-menu>
+      <a mat-button class="nav-buts" routerLink="/Japanese" routerLinkActive>Japanese</a>
     </mat-toolbar>
     <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>
+<router-outlet></router-outlet>

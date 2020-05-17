@@ -1,6 +1,20 @@
+<button id="listMenuBut" mat-raised-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon>Choose List</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item class="menu-buts" (click)="setCurrentTiles('verbs')">
+    <span>Verbs</span>
+  </button>
+  <button mat-menu-item class="menu-buts" (click)="setCurrentTiles('adjectives')">
+    <span>Adjectives</span>
+  </button>
+</mat-menu>
+<!-- <mat-button-toggle-group  mat-menu-item #group="matButtonToggleGroup">
+  <mat-button-toggle>Adjectives</mat-button-toggle>
+  <mat-button-toggle>Verb</mat-button-toggle>
+</mat-button-toggle-group> -->
+
 <mat-grid-list cols="3" rowHeight="100px">
   <mat-grid-tile
-      *ngFor="let tile of tiles"
+      *ngFor="let tile of currentTiles"
       [colspan]="tile.cols"
       [rowspan]="tile.rows"
       [style.background]="">

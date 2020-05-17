@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
   <mat-tab-group>
     <mat-tab>
       <ng-template mat-tab-label>
@@ -19,5 +19,18 @@
       <word-box></word-box>
     </mat-tab>
   </mat-tab-group>
-</mat-card>
+</mat-card> -->
 
+<mat-card>
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+      <p class="mat-labels">{{ link.label }}</p>
+    </a>
+    </nav>
+
+    <router-outlet></router-outlet>
+</mat-card>
