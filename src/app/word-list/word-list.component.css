@@ -8,4 +8,15 @@ mat-divider {
   margin-top: 10px;
   width: 80%;
 }
+
+.menu-buts {
+  color: #773333;
+}
+
+#listMenuBut {
+  background-color: #4f4745;
+  color: #f9e7c4;
+  text-align: center;
+  padding-left: 0;
+}
 /*# sourceMappingURL=word-list.component.css.map */

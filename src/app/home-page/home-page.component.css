@@ -1,0 +1,33 @@
+.containerCard {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  top: 5vh;
+  bottom: 5vh;
+  background-color: #773333;
+}
+
+.imgCard {
+  width: 100%;
+  background-color: #f9e7c4;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/img/quit.svg");
+  background-position: center;
+  background-size: contain;
+  height: 78vh;
+}
+
+#headerImg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1%;
+  margin-left: 1%;
+  width: 30%;
+}
+/*# sourceMappingURL=home-page.component.css.map */
