@@ -50,7 +50,6 @@ export class WordListComponent implements OnInit {
     };
 
     this.setCurrentTiles('verbs');
-    console.log(koreanVerbList);
   }
 
 }

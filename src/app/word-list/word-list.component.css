@@ -13,6 +13,10 @@ mat-divider {
   color: #773333;
 }
 
+.divider {
+  background-color: #f9e7c4 !important;
+}
+
 #listMenuBut {
   background-color: #4f4745;
   color: #f9e7c4;
