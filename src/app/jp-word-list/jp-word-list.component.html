@@ -1,6 +1,3 @@
-<!-- <app-alt-tabs [language]="'Japanese'"></app-alt-tabs> -->
-<mat-card class="containerCard">
-  <mat-card class="imgCard">
-    <!-- <img id="headerImg" src="assets/img/tea.svg"/> -->
-  </mat-card>
+<mat-card [@slideExpandAnimation] class="containerCard">
+  <mat-card class="imgCard" (click)="tween()"></mat-card>
 </mat-card>

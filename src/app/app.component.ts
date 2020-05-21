@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,4 @@ import Swal from 'sweetalert2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Client';
-
-  serveAlert(){
-    Swal.fire(
-      'Good job!',
-      'You clicked the button!',
-      'success'
-    );
-  }
 }
