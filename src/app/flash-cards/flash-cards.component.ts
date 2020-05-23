@@ -1,9 +1,9 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import Glide from '@glidejs/glide';
-import Slider from '@glidejs/glide';
+import { Component, OnInit, ElementRef, ViewChild, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import KoreanAdjectiveList from '../../assets/json/KoreanAdjectiveList.json';
+import { slideInOutAnimation, slideExpandAnimation } from '../_animations/index';
+import Glide from '@glidejs/glide';
 import { gsap } from 'gsap';
-import { ɵTestingCompilerFactory } from '@angular/core/testing';
+import {MediaMatcher} from '@angular/cdk/layout';
 
 export interface Card {
   text1: string;
@@ -13,9 +13,11 @@ export interface Card {
 @Component({
   selector: 'app-flash-cards',
   templateUrl: './flash-cards.component.html',
-  styleUrls: ['./flash-cards.component.css']
+  styleUrls: ['./flash-cards.component.css'],
+  //animations: [slideExpandAnimation],
+  //host: {'[@slideExpandAnimation]': ''}
 })
-export class FlashCardsComponent implements OnInit {
+export class FlashCardsComponent implements OnInit, OnDestroy {
 
   @ViewChild('thisDiv') thisDiv: ElementRef;
   @ViewChild('startBut') startBut: ElementRef;
@@ -35,7 +37,19 @@ export class FlashCardsComponent implements OnInit {
 
   index = this.glide.index;
 
-  constructor() { }
+  mobileQuery: MediaQueryList;
+
+  private _mobileQueryListener: () => void;
+
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+  }
+
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
 
   testFunc(){
     console.log('test');

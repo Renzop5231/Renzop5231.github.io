@@ -1,4 +1,4 @@
-<mat-card id="temp-card">
+<mat-card id="temp-card" class="imgCard">
   <!-- <img class="girlImg" src="assets/img/girl.svg" /> -->
   <button mat-icon-button (click)="slideLeft()" class="left-slide" *ngIf="!start">
     <mat-icon>chevron_left</mat-icon>
@@ -10,13 +10,14 @@
       <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
           <li class="glide__slide" *ngFor="let card of adjectiveCards">
-            <mat-card class="flash-cards">
-              <div class="text-one">{{card.text1}}</div>
-              <br/>
-              <mat-divider class="divider"></mat-divider>
-              <br/>
-              <div class="text-two">{{card.text2}}</div>
-            </mat-card>
+            <div class=flash-cards>
+              <mat-card [class]="mobileQuery.matches ?'flash-card1-mobile': 'flash-card1'">
+                <div class="text-two">{{card.text1}}</div>
+              </mat-card>
+              <mat-card [class]="mobileQuery.matches ? 'flash-card2-mobile': 'flash-card2'">
+                <div class="text-two">{{card.text2}}</div>
+              </mat-card>
+            </div>
           </li>
         </ul>
       </div>
@@ -28,7 +29,7 @@
     <mat-icon>chevron_right</mat-icon>
   </button>
 
-  <button mat-raised-button (click)="startCards()" class="start-but" #startBut *ngIf="start">Begin!</button>
+  <button mat-raised-button (click)="startCards()" [class]="mobileQuery.matches ? 'start-but-mobile': 'start-but'" #startBut *ngIf="start">Begin!</button>
 
   <!-- <ul>
     <li *ngFor="let card of adjectiveCards">

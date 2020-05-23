@@ -1,36 +1,37 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false"
-      *ngIf="false">
-    <mat-toolbar>Menu</mat-toolbar>
+<mat-sidenav-container class="example-containers">
+  <mat-sidenav #snav class="example-sidenav">
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a (click)="snav.close()" [style]="{'color': '#f9e7c4'}" mat-list-item routerLink="/Japanese" routerLinkActive>Japanese</a>
+      <a mat-list-item [style]="{'color': '#f9e7c4'}" [matMenuTriggerFor]="koreanMenu">Korean</a>
+      <mat-menu #koreanMenu="matMenu">
+        <a (click)="snav.close()" mat-menu-item class="menu-buts" routerLink="/Korean/flash-cards" routerLinkActive>Flash Cards</a>
+        <a (click)="snav.close()" mat-menu-item class="menu-buts" routerLink="/Korean/word-lists" routerLinkActive>Word List</a>
+        <a (click)="snav.close()" mat-menu-item class="menu-buts" routerLink="/Korean/word-box" routerLinkActive>Vocab Test</a>
+      </mat-menu>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
+    <!-- Add Content Here -->
     <mat-toolbar>
       <button
         type="button"
         aria-label="Toggle sidenav"
+        (click)="snav.toggle()"
         mat-icon-button
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <!-- *ngIf="isHandset$ | async" -->
+        <mat-icon>menu</mat-icon>
       </button>
       <a mat-button id="homeBut" class="nav-buts" routerLink="/" routerLinkActive>Korean Vocabulary App</a>
       <span class="spacer"></span>
-      <button mat-button class="nav-buts" [matMenuTriggerFor]="koreanMenu">Korean</button>
+      <a *ngIf="isNotHandset$ | async" mat-button class="nav-buts" routerLink="/Japanese" routerLinkActive>Japanese</a>
+      <a *ngIf="isNotHandset$ | async" mat-button class="nav-buts" [matMenuTriggerFor]="koreanMenu">Korean</a>
       <mat-menu #koreanMenu="matMenu">
         <a mat-menu-item class="menu-buts" routerLink="/Korean/flash-cards" routerLinkActive>Flash Cards</a>
         <a mat-menu-item class="menu-buts" routerLink="/Korean/word-lists" routerLinkActive>Word List</a>
         <a mat-menu-item class="menu-buts" routerLink="/Korean/word-box" routerLinkActive>Vocab Test</a>
       </mat-menu>
-      <a mat-button class="nav-buts" routerLink="/Japanese" routerLinkActive>Japanese</a>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-<router-outlet></router-outlet>

@@ -31,6 +31,9 @@ import { FlashCardsComponent } from './flash-cards/flash-cards.component';
 import { JpWordListComponent } from './jp-word-list/jp-word-list.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
+//directive imports
+import { GridColsDirective } from './grid-col.directive'
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     WordListComponent,
     FlashCardsComponent,
     JpWordListComponent,
-    HomePageComponent
+    HomePageComponent,
+    GridColsDirective
   ],
   imports: [
     BrowserModule,

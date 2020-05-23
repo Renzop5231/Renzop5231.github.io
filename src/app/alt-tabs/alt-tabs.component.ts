@@ -1,10 +1,12 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Router } from '@angular/router';
+import { slideInOutAnimation, slideExpandAnimation } from '../_animations/index';
 
 @Component({
   selector: 'app-alt-tabs',
   templateUrl: './alt-tabs.component.html',
-  styleUrls: ['./alt-tabs.component.css']
+  styleUrls: ['./alt-tabs.component.css'],
+  animations: [slideExpandAnimation]
 })
 export class AltTabsComponent implements OnInit {
   @Input() language = '';

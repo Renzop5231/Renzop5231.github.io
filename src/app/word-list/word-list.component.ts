@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map, shareReplay } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import koreanVerbList from '../../assets/json/KoreanVerbList.json';
 import KoreanAdjectiveList from '../../assets/json/KoreanAdjectiveList.json';
 
@@ -13,8 +16,11 @@ export interface Tile {
   selector: 'app-word-list',
   templateUrl: './word-list.component.html',
   styleUrls: ['./word-list.component.css']
+
 })
 export class WordListComponent implements OnInit {
+
+  colNum = 3;
 
   currentTiles: Tile[] = [];
 
@@ -22,7 +28,19 @@ export class WordListComponent implements OnInit {
 
   adjectiveTiles: Tile[] = [];
 
-  constructor() { }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
+    isNotHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => !(result.matches)),
+      shareReplay()
+    );
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
   setCurrentTiles(tileType:string){
     switch(tileType) {
@@ -50,6 +68,10 @@ export class WordListComponent implements OnInit {
     };
 
     this.setCurrentTiles('verbs');
+
+    if(this.isHandset$){
+      this.colNum = 1;
+    }
   }
 
 }

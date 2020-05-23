@@ -1,5 +1,5 @@
 <mat-card [@slideExpandAnimation] class="containerCard">
-  <mat-card  class="imgCard">
+  <mat-card  [class]="mobileQuery.matches ? 'imgCard-mobile': 'imgCard'">
     <img id="headerImg" src="assets/img/welcome_cats.svg"/>
   </mat-card>
 </mat-card>

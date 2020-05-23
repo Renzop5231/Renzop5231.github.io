@@ -21,7 +21,7 @@
   </mat-tab-group>
 </mat-card> -->
 
-<mat-card>
+<mat-card [@slideExpandAnimation]>
   <nav mat-tab-nav-bar>
     <a mat-tab-link
     *ngFor="let link of navLinks"

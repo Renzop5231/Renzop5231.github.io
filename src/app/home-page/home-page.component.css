@@ -22,6 +22,16 @@
   height: 78vh;
 }
 
+.imgCard-mobile {
+  width: 100%;
+  background-color: #f9e7c4;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/img/quit.svg");
+  background-position: center;
+  background-size: contain;
+  height: 50vh;
+}
+
 #headerImg {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,29 +1,31 @@
-<button id="listMenuBut" mat-raised-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon>Choose List</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item class="menu-buts" (click)="setCurrentTiles('verbs')">
-    <span>Verbs</span>
-  </button>
-  <button mat-menu-item class="menu-buts" (click)="setCurrentTiles('adjectives')">
-    <span>Adjectives</span>
-  </button>
-</mat-menu>
-<!-- <mat-button-toggle-group  mat-menu-item #group="matButtonToggleGroup">
-  <mat-button-toggle>Adjectives</mat-button-toggle>
-  <mat-button-toggle>Verb</mat-button-toggle>
-</mat-button-toggle-group> -->
+<div class="imgCard">
+  <button id="listMenuBut" mat-raised-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon>Choose List</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item class="menu-buts" (click)="setCurrentTiles('verbs')">
+      <span>Verbs</span>
+    </button>
+    <button mat-menu-item class="menu-buts" (click)="setCurrentTiles('adjectives')">
+      <span>Adjectives</span>
+    </button>
+  </mat-menu>
+  <!-- <mat-button-toggle-group  mat-menu-item #group="matButtonToggleGroup">
+    <mat-button-toggle>Adjectives</mat-button-toggle>
+    <mat-button-toggle>Verb</mat-button-toggle>
+  </mat-button-toggle-group> -->
 
-<mat-grid-list cols="3" rowHeight="100px">
-  <mat-grid-tile
-      *ngFor="let tile of currentTiles"
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [style.background]="">
-    <mat-card>
-      {{tile.text1}}
-      <br/>
-      <mat-divider class="divider"></mat-divider>
-      <br/>
-      {{tile.text2}}
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+  <mat-grid-list [gridCols]="{xs: 1, sm: 2, md: 3, lg: 4, xl: 5}" rowHeight="100px">
+    <mat-grid-tile
+        *ngFor="let tile of currentTiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="">
+      <mat-card>
+        {{tile.text1}}
+        <br/>
+        <mat-divider class="divider"></mat-divider>
+        <br/>
+        {{tile.text2}}
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
