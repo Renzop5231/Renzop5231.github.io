@@ -24,7 +24,7 @@
     "@dogstudio/highway": "^2.2.1",
     "@glidejs/glide": "^3.4.1",
     "@sweetalert2/ngx-sweetalert2": "^8.1.0",
-    "gsap": "^3.2.6",
+    "gsap": "^3.6.0",
     "rxjs": "~6.5.4",
     "sweetalert2": "^9.10.12",
     "tslib": "^1.10.0",
